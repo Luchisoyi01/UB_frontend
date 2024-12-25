@@ -32,19 +32,23 @@
     </div>    
   </header> 
   <hr> 
-  <div class="login">
-    <label for="Username">Username</label>
-    <input type="text" placeholder="Username">
-    <label for="Password">Password</label>
-    <div class="grid-container">
-      <!-- Password grid items dynamically generated with JavaScript -->
+  <form action="" method="post">
+    <div class="login">
+      <label for="Username">Username</label>
+      <input type="text" required placeholder="Username">
+      <label for="Password">Password</label>
+      <div class="grid-container">
+        <!-- Password grid items dynamically generated with JavaScript -->
+      </div>
+      <div class="button">
+        <button type="submit" class="butt">Login</button>
+        <a href="register.html">
+          <button type="button" class="butt">Register</button>
+        </a>
+      </div>
+      <a href="reset_password.html">Reset password?</a>    
     </div>
-    <div class="button">
-      <button class="butt">Login</button>
-      <button class="butt">Register</button>
-    </div>
-    <a href="reset_password.html">Reset password?</a>    
-  </div>
-  <script src="script/login.js"></script>  
+  </form>  
+  <script src="script/password.js"></script>  
 </body>
 </html>
