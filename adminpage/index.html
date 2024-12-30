@@ -3,9 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../indexpages/logo/4.png" type="image/x-icon">
+  <link rel="stylesheet" href="Styles/header.css">
+  <link rel="stylesheet" href="Styles/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>Uzuri Bank Admin</title>
 </head>
 <body>
-  
+  <header class="header">
+    <div class="leftnav">
+      <img src="../indexpages/logo/4.png" alt="">
+      <a href="index.html">Home</a>
+      <a href="Accounts.html">Accounts</a>
+      <a href="Logs.html">Logs</a>
+      <a href="Loans.html">Loans</a>
+      <a href="Clients.html">Clients</a>
+    </div>
+    <div class="rightnav">
+      <div class="notification">
+        <div class="bell-container">
+          <div class="bell"></div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-button">
+          <img src="../indexpages/images/home.jpeg" alt="Profile Picture" class="profile-pic">
+        </button>
+        <div class="dropdown-content">
+          <div class="dropdown-header">
+            <img src="../indexpages/images/home.jpeg" alt="Profile Picture">
+            <p>John Doe</p>
+          </div>          
+          <a href="#"><i class="fas fa-user"></i> Profile</a>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+          <a href="../indexpages/index.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <hr>
+  <section class="main">
+    <div class="accounts">
+      <h2>Total amount in accounts</h2>
+      <div class="balance">
+        <div>
+          <h3>KSH</h3>
+          <h3>1,000,000,000</h3>
+        </div>
+      </div>
+    </div>
+    <div class="transactions">
+      <h2>Total transactions</h2>
+      <div class="transaction">
+        <div>
+          <h3>Number</h3>
+          <h3>100</h3>
+        </div>        
+      </div>
+    </div>
+    <div class="clients">
+      <h2>Total number of clients</h2>
+      <div class="client">
+        <div>
+          <h3>Active clients</h3>
+          <h3>1000</h3>
+        </div>
+      </div>
+    </div>
+    <div class="loans">
+      <h2>Loans</h2>
+      <div class="loan">
+        <div>
+          <h3>Issued</h3>
+          <h3>100</h3>
+        </div>
+        <div>
+          <h3>Remaining</h3>
+          <h3>KSH 100</h3>
+        </div>
+        <div>
+          <h3>Paid</h3>
+          <h3>KSH 100</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 Uzuri Bank. All rights reserved.</p>
+  </footer>
 </body>
 </html>
