@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../indexpages/logo/4.png" type="image/x-icon">
+  <link rel="stylesheet" href="Styles/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  <link rel="stylesheet" href="Styles/Accounts.css">
+  <link rel="stylesheet" href="Styles/Clients.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Uzuri Bank Admin</title>
+</head>
+<body>
+  <header class="header">
+    <div class="leftnav">
+      <img src="../indexpages/logo/4.png" alt="">
+      <a href="index.html">Home</a>
+      <a href="Accounts.html">Accounts</a>
+      <a href="Logs.html">Logs</a>
+      <a href="Loans.html">Loans</a>
+      <a href="Clients.html">Clients</a>
+    </div>
+    <div class="rightnav">
+      <div class="notification">
+        <div class="bell-container">
+          <div class="bell"></div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-button">
+          <img src="../indexpages/images/home.jpeg" alt="Profile Picture" class="profile-pic">
+        </button>
+        <div class="dropdown-content">
+          <div class="dropdown-header">
+            <img src="../indexpages/images/home.jpeg" alt="Profile Picture">
+            <p>John Doe</p>
+          </div>          
+          <a href="#"><i class="fas fa-user"></i> Profile</a>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+          <a href="../indexpages/index.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <hr>
+  <section class="main">
+    <div class="main_intro">
+      <h1>Accounts</h1>
+    </div> 
+    <div class="accounts">
+      <div class="salary">
+        <h2>Salary Accounts</h2>
+        <h3>Total</h3>
+        <h4>KSH 4000</h4>
+      </div>
+      <div class="savings">
+        <h2>Savings Accounts</h2>
+        <h3>Total</h3>
+        <h4>KSH 4000</h4>
+      </div>
+      <div class="fixed">
+        <h2>Fixed Accounts</h2>
+        <h3>Total</h3>
+        <h4>KSH 4000</h4>
+      </div>
+    </div>   
+  </section>
+  <div class="filter">
+    <div class="col-md-12 mb-3">
+      <label for="accountTypeDropdown">Filter by Account Type:</label>
+      <select id="accountTypeDropdown" class="form-select">
+        <option value="">All</option>
+        <option value="Fixed">Fixed</option>
+        <option value="Savings">Savings</option>
+        <option value="Salary">Salary</option>
+      </select>
+    </div>
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Account Number</th>
+              <th>Account Type</th>
+              <th>Amount</th> <!-- New column for Amount -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-account-type="Fixed">
+              <td>1</td>
+              <td>John Doe</td>
+              <td>1234567890</td>
+              <td>Fixed</td>
+              <td>5000</td> <!-- Amount -->
+            </tr>
+            <tr data-account-type="Savings">
+              <td>2</td>
+              <td>Jane Smith</td>
+              <td>9876543210</td>
+              <td>Savings</td>
+              <td>10000</td> <!-- Amount -->
+            </tr>
+            <tr data-account-type="Salary">
+              <td>3</td>
+              <td>Michael Brown</td>
+              <td>1122334455</td>
+              <td>Salary</td>
+              <td>8000</td> <!-- Amount -->
+            </tr>
+            <tr data-account-type="Fixed">
+              <td>4</td>
+              <td>Emily Davis</td>
+              <td>9988776655</td>
+              <td>Fixed</td>
+              <td>12000</td> <!-- Amount -->
+            </tr>    
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Initialize DataTable
+      $('#bootstrapdatatable').DataTable({
+        "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+        "iDisplayLength": 5
+      });
+
+      // Account Type Filter
+      $('#accountTypeDropdown').change(function() {
+        var selectedType = $(this).val().toLowerCase();
+        
+        // Filter rows based on selected account type
+        $('#bootstrapdatatable tbody tr').each(function() {
+          var accountType = $(this).data('account-type').toLowerCase();
+
+          if (selectedType === "" || accountType === selectedType) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
