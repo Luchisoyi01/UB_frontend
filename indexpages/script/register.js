@@ -36,8 +36,8 @@ document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
     showAlert('Please enter a valid phone number.');
   }
-  if (!/^\d{8}$/.test(Idno)) {
+  /*if (!/^\d{8}$/.test(Idno)) {
     e.preventDefault();
     showAlert('Please enter a valid ID number.');
-  }
+  }*/
   });
