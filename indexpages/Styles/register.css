@@ -17,7 +17,10 @@
   flex-direction: column;
   margin-right: 20px;
 }
-
+form{
+  max-width: 90%;
+  margin: 20px auto;
+}
 input {
   margin-bottom: 10px;
   letter-spacing: 0.05em;
@@ -37,7 +40,7 @@ input:focus {
 label {
   letter-spacing: 0.05em;
   margin-bottom: 10px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .account-container {
