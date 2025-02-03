@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/header.css">
+    <link rel="shortcut icon" href="../indexpages/logo/5.png" type="image/x-icon">
+    <title>Loan Application</title>
+    <style>
+        .hero {
+            background-color: white;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .note {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 10px solid #ff9800;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            width: auto;
+            padding: 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Popup form styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .popup input, .popup textarea, .popup select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .popup button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background-color: #45a049;
+        }
+        .popup .cancel-btn {
+            background-color: #f44336;
+        }
+        .popup .cancel-btn:hover {
+            background-color: #e53935;
+        }
+        .highlight {
+            background-color: #ffcccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="leftnav">
+          <img src="../indexpages/logo/5.png" alt="">
+          <a href="index.html">Home</a>
+          <a href="Accounts.html">Accounts</a>
+          <a href="Loan.html">Loans</a>
+        </div>
+        <div class="rightnav">
+          <div class="notification">
+            <div class="bell-container">
+              <div class="bell"></div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              <img src="../indexpages/images/home.jpeg" alt="Profile Picture" class="profile-pic">
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-header">
+                <img src="../indexpages/images/home.jpeg" alt="Profile Picture">
+                <p>John Doe</p>
+              </div>          
+              <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+              <a href="#"><i class="fas fa-cog"></i> Settings</a>
+              <a href="../indexpages/index.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="container">
+    <h1>Loan Application Status</h1>
+    
+    <table id="loanTable">
+        <thead>
+            <tr>
+                <th>Loan Amount</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5000</td>
+                <td>Medical Expenses</td>
+                <td>Approved</td>
+            </tr>
+            <tr>
+                <td>3000</td>
+                <td>Home Renovation</td>
+                <td>Approved</td>
+            </tr>
+            <tr>
+                <td>10000</td>
+                <td>Business Expansion</td>
+                <td>Rejected</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="note">
+        <p><strong>Note:</strong> All loans will have an interest rate of 15%.</p>
+    </div>
+    <button class="btn" id="applyBtn">Apply for a Loan</button>
+    <button class="btn" id="payBtn">Pay for Existing Loans</button>
+</div>
+
+<!-- Popup Form for Loan Application -->
+<div class="popup" id="popupForm">
+    <div class="popup-content">
+        <h2>Loan Application Form</h2>
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" required>
+        <label for="loanReason">Reason:</label>
+        <textarea id="loanReason" required></textarea>
+        <button id="applyLoan" class="btn">Apply</button>
+        <button class="btn cancel-btn" id="cancelBtn">Cancel</button>
+    </div>
+</div>
+
+<!-- Popup Form for Payment -->
+<div class="popup" id="paymentForm">
+    <div class="popup-content">
+        <h2>Pay for Existing Loan</h2>
+        <label for="loanSelect">Select Loan:</label>
+        <select id="loanSelect">
+            <!-- Dynamically populated with approved loans -->
+        </select>
+        <label for="paymentAmount">Amount to Pay:</label>
+        <input type="number" id="paymentAmount" required>
+        <button id="payLoan" class="btn">Pay</button>
+        <button class="btn cancel-btn" id="cancelPaymentBtn">Cancel</button>
+    </div>
+</div>
+<script src="Script/loan.js"></script>
+</body>
+</html>
