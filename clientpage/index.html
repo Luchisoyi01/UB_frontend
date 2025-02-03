@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../indexpages/logo/5.png" type="image/x-icon">
+  <title>Uzuri Bank Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles/header.css">
+  <link rel="stylesheet" href="Styles/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="hero">
+    <div class="leftnav">
+      <img src="../indexpages/logo/5.png" alt="">
+      <a href="index.html">Home</a>
+      <a href="Accounts.html">Accounts</a>
+      <a href="Loan.html">Loans</a>
+    </div>
+    <div class="rightnav">
+      <div class="notification">
+        <div class="bell-container">
+          <div class="bell"></div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-button">
+          <img src="../indexpages/images/home.jpeg" alt="Profile Picture" class="profile-pic">
+        </button>
+        <div class="dropdown-content">
+          <div class="dropdown-header">
+            <img src="../indexpages/images/home.jpeg" alt="Profile Picture">
+            <p>John Doe</p>
+          </div>          
+          <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+          <a href="../indexpages/index.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="account-info">
+          <h2>Account Information</h2>
+          <p><strong>Account Holder:</strong> John Doe</p>
+          <p><strong>Account Number:</strong> 1234567890</p>
+          <p><strong>Account Balance:</strong> 15000.00</p>
+          <p><strong>Daily Transaction Limit:</strong> 5000.00</p>
+          <button id="viewTransactionBtn" class="btn btn-primary w-100 mt-3">View Transaction History</button>
+        </div>
+      </div>
+    </div>
+    <!-- Transaction History Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup">
+        <div class="popup-header">
+          <h2>Transaction History</h2>
+          <button id="closePopup" class="btn btn-danger btn-sm">Close</button>
+        </div>
+        <table class="popup-table">
+          <thead>
+            <tr>
+              <th>Amount</th>
+              <th>Time</th>
+              <th>Recipient</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>200.00</td>
+              <td>10:30 AM</td>
+              <td>Jane Smith</td>
+            </tr>
+            <tr>
+              <td>500.00</td>
+              <td>1:15 PM</td>
+              <td>Mark Johnson</td>
+            </tr>
+            <tr>
+              <td>1000.00</td>
+              <td>3:45 PM</td>
+              <td>Emily Davis</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="popup-buttons">
+          <button id="closePopupFooter" class="btn btn-secondary">Close</button>
+          <button id="viewMore" class="btn btn-primary">View</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="menu">
+          <h2>Menu</h2>
+          <a href="loan.html" class="btn btn-success">Loan Application</a>
+          <button id="depositButton" class="btn btn-primary">Deposit Money</button>
+          <button id="transactionButton" class="btn btn-light">Make a Transaction</button>
+        </div>
+      </div>
+      <!-- transaction Popup -->
+      <div class="popup-overlay" id="transactionPopupOverlay">
+        <div class="popup">
+          <div class="popup-header">
+            <h2>Make a Transaction</h2>
+            <button id="transactionCancelButton" class="btn-close" aria-label="Close"></button>
+          </div>
+          <form id="transactionForm">
+            <div class="form-group">
+              <label for="transactionAccountType">Choose Account:</label>
+              <select id="transactionAccountType" class="form-control" required>
+                <option value="" disabled selected>Select an account</option>
+                <option value="fixed">Fixed Account</option>
+                <option value="salary">Salary Account</option>
+                <option value="savings">Savings Account</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="recipientAccountNumber">Recipient Account Number:</label>
+              <input type="number" id="recipientAccountNumber" class="form-control" placeholder="Enter recipient's account number" required>
+              <label for="Amount">Amount:</label>
+              <input type="number" id="Amount" class="form-control" placeholder="Enter amount" required>
+            </div>
+            <div class="popup-buttons">
+              <button type="button" id="transactionSubmitButton" class="btn btn-success">Submit</button>
+              <button type="button" id="transactionCancelButtonFooter" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+      <!-- Deposit Popup -->
+      <div class="popup-overlay" id="depositPopupOverlay">
+        <div class="popup">
+          <div class="popup-header">
+            <h2>Deposit Money</h2>
+            <button id="cancelButton" class="btn-close" aria-label="Close"></button>
+          </div>
+          <form id="depositForm">
+            <div class="form-group">
+              <label for="accountType">Choose Account:</label>
+              <select id="accountType" class="form-control" required>
+                <option value="" disabled selected>Select an account</option>
+                <option value="fixed">Fixed Account</option>
+                <option value="salary">Salary Account</option>
+                <option value="savings">Savings Account</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="depositAmount">Amount:</label>
+              <input type="number" id="depositAmount" class="form-control" placeholder="Enter amount" required>
+            </div>
+            <div class="popup-buttons">
+              <button type="button" id="confirmButton" class="btn btn-success">Okay</button>
+              <button type="button" id="cancelButtonFooter" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>    
+    </div>
+  </div>
+  <script src="Script/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>  
+</body>
+</html>
