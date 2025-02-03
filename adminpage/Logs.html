@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../indexpages/logo/4.png" type="image/x-icon">
+  <link rel="stylesheet" href="Styles/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  <link rel="stylesheet" href="Styles/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Uzuri Bank Admin</title>
+</head>
+<body>
+  <header class="header">
+    <div class="leftnav">
+      <img src="../indexpages/logo/4.png" alt="">
+      <a href="index.html">Home</a>
+      <a href="Accounts.html">Accounts</a>
+      <a href="Logs.html">Logs</a>
+      <a href="Loans.html">Loans</a>
+      <a href="Clients.html">Clients</a>
+    </div>
+    <div class="rightnav">
+      <div class="notification">
+        <div class="bell-container">
+          <div class="bell"></div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-button">
+          <img src="../indexpages/images/home.jpeg" alt="Profile Picture" class="profile-pic">
+        </button>
+        <div class="dropdown-content">
+          <div class="dropdown-header">
+            <img src="../indexpages/images/home.jpeg" alt="Profile Picture">
+            <p>John Doe</p>
+          </div>          
+          <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+          <a href="../indexpages/index.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <hr>
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Caused By</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Log In</td>
+            <td>John Doe</td>
+            <td>2024-01-01 09:00</td>
+          </tr>
+          <tr >
+            <td>2</td>
+            <td>Loan Application</td>
+            <td>Jane Smith</td>
+            <td>2024-01-02 14:30</td>
+          </tr>
+          <tr >
+            <td>3</td>
+            <td>Log Out</td>
+            <td>Michael Brown</td>
+            <td>2024-01-03 18:00</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Deposit</td>
+            <td>Emily Davis</td>
+            <td>2024-01-04 10:15</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Transaction</td>
+            <td>Alex Johnson</td>
+            <td>2024-01-05 16:45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+  <script src="Script/query.js"></script>
+</body>
+</html>
